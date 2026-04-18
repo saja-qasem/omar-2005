@@ -38,7 +38,7 @@
         }
 
         /* Light Mode */
-        body.light-mode {
+        /* body.light-mode {
             --bg-primary: #f8fafc;
             --bg-secondary: #ffffff;
             --bg-card: #ffffff;
@@ -51,7 +51,7 @@
             --navbar-bg: rgba(248, 250, 252, 0.94);
             --footer-bg: #eef2f8;
             --overlay-bg: rgba(255, 255, 255, 0.85);
-        }
+        } */
 
         body {
             font-family: 'Cairo', 'Poppins', sans-serif;
@@ -66,8 +66,46 @@
 
         }
 
+
+
         .page-wrapper {
             flex: 1;
+            background: linear-gradient(-45deg,
+                    #0a0a0f 40%,
+                    #111118 50%,
+                    rgba(234, 198, 83, 0.08) 60%,
+                    #0a0a0f 80%);
+            background-size: 400% 400%;
+            animation: gradientMove 8s ease infinite;
+
+        }
+
+        .page-wrapper::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+
+
+        }
+
+        @keyframes lightMove {
+            0% {
+                background-position: 20% 30%, 80% 70%;
+            }
+
+            50% {
+                background-position: 30% 40%, 70% 60%;
+            }
+
+            100% {
+                background-position: 20% 30%, 80% 70%;
+            }
+        }
+
+        .page-wrapper.light-mode::before {
+            display: none;
         }
 
         body[dir="ltr"] {
@@ -226,6 +264,22 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 3rem;
+
+
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .hero-content {
@@ -239,6 +293,20 @@
             animation: fadeSlideLeft 0.9s ease-out;
             margin-top: 150px;
 
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .hero-image img {
@@ -661,8 +729,6 @@
                 <li><a href="#contact" data-key="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-controls">
-                <button id="themeToggle" class="icon-btn"><i class="fas fa-moon"></i> <span
-                        id="themeText">Dark</span></button>
                 <button id="langToggle" class="icon-btn">AR</button>
             </div>
         </nav>
@@ -753,7 +819,7 @@
                 id: "social",
                 nameAr: "شركة code_tech",
                 nameEn: "Code Tech Company",
-                img: "img/cover1.jpeg",
+                img: "img/345-Recovered.png",
                 subcategories: [
                     {
                         nameAr: "اعلانات - سوشيال ميديا",
@@ -786,13 +852,13 @@
                 id: "branding",
                 nameAr: "شركة شعاع",
                 nameEn: "Shuaa Company",
-                img: "img/pop.png",
+                img: "img/34.png",
                 images: [
                     "img/r1.jpeg",
                     "img/r2.jpeg",
                     "img/r3.jpeg",
                     "img/r4.jpeg",
-                    "img/r5.jpeg",
+                    "img/r5.jpeg"
 
                 ]
             },
@@ -801,7 +867,7 @@
                 id: "Webura Company",
                 nameAr: "شركة ويبرو",
                 nameEn: "Posters",
-                img: "img/oop.png",
+                img: "img/23.png",
                 images: [
                     "img/e1.png",
                     "img/e2.png"
@@ -813,7 +879,7 @@
                 id: "branding",
                 nameAr: "عمل مؤسسات ",
                 nameEn: "Institutional Work",
-                img: "img/oop.png",
+                img: "img/21.png",
                 images: [
                     "img/w1.png",
                     "img/w2.png",
@@ -831,7 +897,7 @@
                 id: "ads",
                 nameAr: "إعلانات مطاعم",
                 nameEn: "Restaurant Ads",
-                img: "img/oop.png",
+                img: "img/231.png",
                 images: [
                     "img/q1.png",
                     "img/q2.png",
@@ -844,7 +910,7 @@
                 id: "illustrations",
                 nameAr: "اعلانات عامة ",
                 nameEn: "Public Ads",
-                img: "img/oop.png",
+                img: "img/123.png",
                 images: [
                     "img/s1.png",
                     "img/s2.png",
